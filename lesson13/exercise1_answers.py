@@ -27,7 +27,7 @@ for index, digit in enumerate(my_binary_number[::-1]):
 # Task 1: Convert `my_binary_number` to `my_decimal_number` by replacing the
 # `pass` in the for loop with the correct code.
 for index, digit in enumerate(my_binary_number[::-1]):
-    pass
+    my_decimal_number += int(digit) * (2 ** index)
 
 # If you have completed the task correctly, the output of this statement
 # should be: 1011001 (binary) is 89 (decimal)
@@ -45,3 +45,14 @@ user_binary = input('Which binary number should I convert to decimal? ')
 # decimal and store in `my_binary_lookup` such that the key is binary and the
 # value is decimal. When the user inputs 'exit', print the lookup back to
 # the user.
+
+while user_binary != 'exit':
+    my_decimal_number = 0
+    for index, digit in enumerate(user_binary[::-1]):
+        my_decimal_number += int(digit) * (2 ** index)
+
+    my_binary_lookup[user_binary] = my_decimal_number
+    user_binary = input('Which binary number should I convert to decimal? ')
+
+print('Here are your results:')
+print(my_binary_lookup)
